@@ -1,0 +1,1 @@
+[14-Jul-2018 03:52:40 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/blackpep/public_html/blackpeppa/wp-content/themes/blackpeppa/index.php on line 2

@@ -1,0 +1,985 @@
+/*
+Theme Name: Black Peppa Theme
+Theme URI: https://wordpress.org/themes/blackpeppa/
+Author: Piero
+Author URI: https://wordpress.org/
+Description: Tema único para Black Peppa. 
+Version: 0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: blackpeppa
+Tags: 
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*
+===============================
+	Fancy Selections
+===============================
+*/
+
+::selection { 
+  background: #F2E44C; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #F2E44C; /* Gecko Browsers */
+}
+
+#instagram-slider {
+    position: absolute;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    left: 0;
+    right: 0;
+    width: 1140px;
+    bottom: 0;
+}
+
+body {
+	font-family: "Myriad Pro", sans-serif;
+	overflow-x: hidden;
+	position: relative;
+	color: #3d3d3d;
+	min-height: 94vh;
+	padding: 0;
+	margin: 0;
+}
+
+.container {
+	max-width: 1170px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.container.black {
+	color: white;
+}
+
+/*
+===============================
+	Loader Styles
+===============================
+*/
+
+
+.loader {
+	position: absolute;
+	background: #F2E44C;
+	z-index: 24304;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	transition: 0.2s ease all;
+	overflow: hidden;
+}
+
+.loader img {
+	width: 80px;
+}
+
+/*
+===============================
+	Video Background
+===============================
+*/
+
+.special-videoframe {
+	width: 101%;
+	position: absolute;
+	top: 0;
+	z-index: -90;
+	background-image: url("img/videoframe-16-9.jpg");
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center
+}
+
+.main-video {
+	width: 100%;
+	position: relative;
+	z-index: -99
+}
+
+/*
+===============================
+	Centered Styles
+===============================
+*/
+
+.fullcenter {
+	text-align: center;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+#inicio .fullcenter {
+	top: 65%;
+}
+
+.fullcenter h1 {
+	color: #fff;
+}
+
+.fullcenter .wrap {
+	color: #F2E44C;
+}
+
+#reel_cta {
+	display: inline-block;
+	border-radius: 5px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #F2E44C;
+	padding: 15px 30px;
+	border: 3px solid #F2E44C;
+}
+
+/*
+===============================
+	CSS Resets
+===============================
+*/
+
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ul, li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+h1 {
+	text-align: center;
+	margin: 20px 0 30px;
+}
+
+h4 {
+	margin: 10px 0;
+}
+
+.main {
+	padding-bottom: 100px;
+}
+
+/*
+===============================
+	Responsive Menu
+===============================
+*/
+
+
+#menu-toggle {
+	display: none;
+}
+
+#menu-toggle div {
+	width: 35px;
+	height: 5px;
+	background-color: white;
+	margin: 6px 0;
+}
+
+/*
+===============================
+	Scroll Sections
+===============================
+*/
+
+.scroll-area {
+	height: 100vh;
+	position: relative;
+	padding-top: 100px;
+}
+
+.scroll-area.white {
+	background: white;
+}
+
+#inicio, .nosotros-section {
+	background-image: url(img/grid.png);
+	background-repeat: repeat;
+	padding: 0;
+}
+
+#inicio {
+	background-color: rgba(0,0,0,0.5);
+}
+
+.nosotros-section {
+	background-image: url(img/fondo-marcel.jpg);
+	background-position: center;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+.section-wrapper.is-centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 100%;
+}
+
+/*
+===============================
+	Dynamic Header 
+===============================
+*/
+
+.header-index.shrunk .container-wrapper {
+	padding: 10px 0;
+	transition: 0.2s ease all;
+}
+
+.header-index.shrunk .header-img {
+	transform: scale(0.8);
+	transition: 0.2s ease all;
+}
+
+.header-index.shrunk .yellowbar {
+	display: none;
+}
+
+.header-index.shrunk {
+	background: none;
+	color: #3d3d3d;
+}
+
+.header-index.shrunk .header-img.full img{
+	content: url(img/blackpeppa_logo_N.svg);
+}
+
+.header-index.shrunk .header-img.small img {
+	content: url(img/blackpeppa_logo_N-sm.svg);
+}
+
+/*
+===============================
+	Generic Styles
+===============================
+*/
+
+.text-center {
+	text-align: center;	
+}
+
+.main.black {
+	color: white;
+}
+
+/*
+===============================
+	Header Styles
+===============================
+*/
+
+.header {
+	color: #3d3d3d;
+}
+
+.header-index {
+	color: white;
+	background-image: url(img/grid.png), url(img/header-grid.png);
+	background-repeat: repeat, repeat;
+	-webkit-background-size: auto, contain;
+	background-size: auto, contain;
+	position: fixed;
+	z-index: 200;
+	left: 0;
+	right: 0;
+}
+
+.header .header_logo {
+	width: 250px;
+}
+
+.header.black {
+	background: rgba(0,0,0,0.25);
+	color: white;
+}
+
+/*
+
+.header.black .current_page_item a, .header.black .current-menu-item a {
+	padding: 0 5px 5px;
+    border-bottom: 3px solid white !important;
+}
+
+*/
+
+.header .container-wrapper {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: relative;
+	padding: 40px 0 30px;
+	transition: 0.2s ease all;
+}
+
+.header .header-img {
+	transform: scale(1);
+	transition: 0.2s ease all;	
+}
+
+.nav ul {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+.nav li {
+	margin: 0 25px;
+	padding-bottom: 5px;
+	border-bottom: 3px solid transparent;
+	transition: 0.2s all ease;
+}
+
+.nav li:hover {
+	transition: 0.2s all ease;
+	font-size: 1.1em;
+	border-bottom: 3px solid #F2E44C;
+	padding-bottom: 5px;
+}
+
+/*
+
+.current_page_item a, .current-menu-item a {
+	padding: 0 5px 5px;
+    border-bottom: 3px solid #F2E44C;
+}
+
+*/
+
+/*
+===============================
+	Social Nav Stuff
+===============================
+*/
+
+.socialnav {
+    margin-bottom: 40px;
+	margin-top: 40px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+}
+
+.socialnav li {
+	margin: 0 5px;	
+}
+
+/*
+===============================
+	Format Yellow Bars
+===============================
+*/
+
+.yellowbar {
+	position: absolute;
+	height: 5px;
+	width: 100%;
+	bottom: 0;
+	right: -50%;
+	z-index: 10;
+	background: #F2E44C;
+}
+
+.yellowunderline {
+	padding-bottom: 5px;
+	border-bottom: 5px solid #F2E44C;
+}
+
+.yellowsquare {
+	height: 45px;
+	width: 340px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background: #F2E44C;
+}
+
+.yellowsquare.vertical {
+	height: 100px;
+	width: 45px;
+	bottom: 15%;
+}
+
+/*
+===============================
+	Photography, Animation and Video Styles
+===============================
+*/
+
+.gallery-list {
+	padding-top: 40px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.gallery-list a {
+	background-position: center;
+	background-repeat: none;
+	-webkit-background-size: cover;
+	background-size: cover;
+	display: inline-block;
+	width: 24.1%;
+	margin: 5px;
+	height: 150px;
+}
+
+.gallery-list a li {
+	background: transparent;
+	position: relative;
+	height: 100%;
+	transition: 0.2s ease all;
+}
+
+.gallery-list a p {
+	display: flex;
+	align-content: center
+	-ms-align-items: center;
+	align-items: center;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 70px;
+	margin: 0;
+	padding: 20px;
+	transition: 0.2s ease all;
+	color: transparent;
+}
+
+.gallery-list a.hover li {
+	display: block;
+	background: rgba(0,0,0,0.5);
+	transition: 0.2s ease all;
+}
+
+.gallery-list a.hover p {
+	color: #F2E44C;
+	background: rgba(0,0,0,0.5);
+}
+
+.gallery-list.is-carousel {
+	display: block;
+	padding-top: 0;
+}
+
+.gallery-list.is-carousel a{
+	max-width: 270px;
+}
+
+/*
+===============================
+	Contact Module
+===============================
+*/
+
+
+.contact-wrapper {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	margin: 0 auto;
+	max-width: 960px;
+}
+
+.contact-wrapper li {
+	width: 49%;
+}
+
+.contact-wrapper li:last-child {
+	padding: 30px;
+	background-image: url(img/contacto_decor.png);
+	background-repeat: no-repeat;
+	-webkit-background-size: contain;
+	background-size: contain;
+	background-position: center right;
+}
+
+#formulario, 
+#mc-embedded-subscribe-form {
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	margin: 0 auto;
+	max-width: 500px;
+	background: #3d3d3d;
+	color: white;
+	padding: 30px 60px 60px;
+}
+
+#formulario input, #formulario textarea, 
+#mc-embedded-subscribe-form input, #mc-embedded-subscribe-form textarea {
+	transition: 0.5s ease all;
+	display: block;
+	resize: none;
+	font-family: sans-serif;
+	width: 100%;
+	margin: 15px 0;
+	padding: 10px 10px 10px 0;
+	color: white;
+	background: none;
+	border: none;
+	border-bottom: 3px solid white;
+}
+
+#formulario input:focus, #formulario textarea:focus, 
+#mc-embedded-subscribe-form input:focus, #mc-embedded-subscribe-form textarea:focus {
+	transition: 0.5s ease all;
+	border-bottom: 3px solid #F2E44C;
+}
+
+#formulario textarea, 
+#mc-embedded-subscribe-form textarea {
+	height: 80px;
+}
+
+#formulario input::placeholder, #formulario textarea::placeholder, 
+#mc-embedded-subscribe-form input::placeholder, #mc-embedded-subscribe-form textarea::placeholder {
+	color: white;
+}
+
+#formulario input[type=submit], 
+#mc-embedded-subscribe-form input[type=submit] {
+	transition: 0.5s ease all;
+	border: none;
+	padding: 15px;
+	margin-bottom: 0;
+	background: white;
+	color: #3d3d3d;
+}
+
+#formulario input[type=submit]:hover, 
+#mc-embedded-subscribe-form input[type=submit]:hover {
+	transition: 0.5s ease all;
+	background: #F2E44C;
+	color: #3d3d3d;
+}
+
+#formulario input.is-sent, 
+#mc-embedded-subscribe-form input.is-sent {
+	transition: 0.5s ease all;
+	background: #F2E44C;
+	color: #3d3d3d;
+}
+
+
+/*
+===============================
+	Clients Module
+===============================
+*/
+
+.clientes-section .slick-list {
+    overflow: visible;
+}
+
+.clientes-section .slick-prev {
+    z-index: 4196;
+}
+
+.clientes-section .slick-track {
+   	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	align-items: center;
+    
+}
+
+.clientes-grid {
+	text-align: center;
+	margin: 0 auto;
+	padding-bottom: 40px;
+	max-width: 960px;
+}
+
+.clientes-grid img {
+	filter: grayscale(100%);
+	transition: 0.2s ease all;
+
+}
+
+.clientes-grid img:hover {
+	filter: grayscale(0%);
+	transition: 0.2s ease all;
+}
+
+.clientes-wrapper {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+.clientes-item {
+	padding: 0 20px;
+}
+
+.clientes-item .row {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	align-items: center;
+	margin: 30px 0;
+}
+
+.clientes-item img {
+	margin-right: 20px;
+}
+
+#typewrite-wrapper {
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.item-title {
+	font-size: 18px;
+}
+
+.item-subtitle {
+	font-style: italic;
+}
+
+.item-title, .item-subtitle {
+	margin: 0;
+}
+
+.ul-list {
+	list-style-type: circle !important;
+}
+
+.section {
+	padding: 3rem 0rem 2.5rem
+}
+
+.section.is-yellow {
+	background-color: #F2E44C;
+}
+
+.section.has-bg-image {
+	background-image: url(img/contacto_decor_blanco.png);+
+	background-size: 25rem;
+	background-repeat: no-repeat;
+	background-position: 90%;
+}
+
+a.typewrite {
+	color: #F2E44C;
+}
+
+.is-hidden {
+	display: none;
+}
+
+/*
+
+Cool Buttons
+
+*/
+
+.social-buttons-wrapper {
+	text-align: center;
+	margin-top: 40px;
+}
+
+label.social-buttons a {
+  display:block;
+  width:100%;
+  height:100%;
+}
+
+.btn{
+  background: url("img/social_ig.png") white no-repeat center center;
+  background-size:0%;
+  margin:0 auto;
+  display:inline-block;
+  width:10px;
+  height:10px;
+  margin-right:2px;
+  border-radius:50%;
+  transition: all 200ms ease-in-out;
+}
+
+.btn:nth-child(2) {
+  background: url("img/social_fb.png") white no-repeat center center;
+  background-size:0%;  
+}
+
+.btn:nth-child(3) {
+  background: url("img/social_yt.png") white no-repeat center center;
+  background-size:0%; 
+}
+
+label.social-buttons .btn {
+  width:60px;
+  height:60px;
+  margin-right:17px;
+  animation: bounce 1s linear 1;
+}
+
+label.social-buttons span.btn:after{
+  content:'';
+  color:#fff;
+  position:absolute;
+  width:60px;
+  background:transparent;
+  bottom:0px;
+  text-align:center;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  opacity:0;
+  transition: all 200ms ease-in-out;
+}
+
+label.social-buttons span.btn:hover:after{
+  opacity:1;
+  left: 0;
+  bottom:-20px;
+  transition: all 400ms ease-in-out;
+}
+
+
+label.social-buttons span.btn:hover:nth-child(1):after{
+  content:'Instagram';
+}
+
+label.social-buttons span.btn:hover:nth-child(2):after{
+  content:'Facebook';
+}
+
+label.social-buttons span.btn:hover:nth-child(3):after{
+  content:'Youtube';
+}
+
+label.social-buttons span.btn:nth-child(1),label.social-buttons span.btn:nth-child(2),label.social-buttons span.btn:nth-child(3){
+  background-size:50%;
+}
+
+label.social-buttons span.btn:hover:nth-child(1),label.social-buttons span.btn:hover:nth-child(2),label.social-buttons span.btn:hover:nth-child(3){
+  transition: all 300ms ease-in-out;
+  transform:scale(1.1);
+}
+
+/*  DARK Styles */
+
+label.social-buttons.is-dark .btn{
+	background-color: #2d2d2d;
+	background-image: url("img/social_ig-white.png");
+}
+label.social-buttons.is-dark .btn:nth-child(2){
+	background-image: url("img/social_fb-white.png");
+}
+label.social-buttons.is-dark .btn:nth-child(3){
+	background-image: url("img/social_yt-white.png");
+}
+
+label.social-buttons.is-dark span.btn:after {
+	color: #2d2d2d;
+}
+
+label.social-buttons.is-dark span.btn:hover:nth-child(1),label.social-buttons.is-dark span.btn:hover:nth-child(2),label.social-buttons.is-dark span.btn:hover:nth-child(3){
+	background-color: #2d2d2d;
+ }
+
+label.social-buttons .btn:nth-child(1):hover {
+  background: url("img/social_ig-on.png") white no-repeat center center;
+  background-size:50%;
+}
+
+
+label.social-buttons .btn:nth-child(2):hover {
+  background: url("img/social_fb-on.png") white no-repeat center center;
+  background-size:50%;
+}
+
+label.social-buttons .btn:nth-child(3):hover {
+  background: url("img/social_yt-on.png") white no-repeat center center;
+  background-size:50%;
+}
+
+/* Begin Responsive */
+
+@media screen and (max-width: 768px) {
+
+	.special-videoframe {
+		display: none;
+	}
+
+	.special-videoframe {
+		height: 100%;
+	}
+
+	.main-video {
+		height: 100%;
+		width: initial;
+		left: -50%;
+	}
+
+	/* Responsive Menu */
+
+	#inicio {
+		background-image: url(img/videoframe-16-9.jpg);
+		background-position: center;
+	}
+
+	.header .container {
+		padding: 0;
+		background: rgba(0,0,0,0.4);
+	}
+
+	.header .container-wrapper {
+		-webkit-flex-wrap: wrap;
+		-moz-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		-o-flex-wrap: wrap;
+		flex-wrap: wrap;
+		padding: 15px 0;
+	}
+
+	#menu-toggle {
+		display: block;
+	}
+
+	.nav {
+		display: none;
+		width: 100%;
+	}
+
+	.nav ul {
+		-webkit-flex-wrap: wrap;
+		-moz-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		-o-flex-wrap: wrap;
+		flex-wrap: wrap;
+		flex-direction: column;
+		text-align: right;
+		margin-top: 10px;
+	}
+
+	.nav li a {
+		display: block;
+		padding: 10px 20px;
+		margin: 0;
+		color: white;
+	}
+
+	/* Content */
+
+	.clientes-wrapper {
+		margin-top: 150px;
+	}
+
+	.contact-wrapper li {
+		margin: 30px 0;
+	}
+
+	.contact-wrapper li, .header {
+		width: 100% !important;
+	}
+
+	.contact-wrapper {
+		-webkit-flex-wrap: wrap;
+		-moz-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		-o-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+
+	.gallery-list a {
+		width: 48%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+
+	/*
+	===============================
+		Hide and Show according to Device
+	===============================
+	*/
+
+	.testimonios-section, .clientes-section {
+		display: none;
+	}
+
+	/*
+	===============================
+		Specific Styles
+	===============================
+	*/
+
+	.header .container-wrapper {
+		padding: 5px 0;
+	}
+
+	.header-img img {
+		width: 140px;
+	}
+
+	#instagram-slider {
+		display: none;
+	}
+
+	.section-wrapper.is-responsive {
+		position: relative;
+		top: initial;
+		left: initial;
+		transform: none;
+	}
+
+	.gallery-list a {
+		width: 100%;
+	}
+
+	.clientes-wrapper {
+		margin-top: 0;
+	}
+
+	.contact-wrapper li:first-child {
+		padding: 20px;
+	}
+}
